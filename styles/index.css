@@ -234,6 +234,7 @@ nav .index {
     flex-direction: column;
     align-items: center;
     width: 40%;
+    margin-top: -20%;
   }
 
   .content-text h1 {
