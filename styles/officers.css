@@ -227,6 +227,7 @@ nav .index {
 
 .officers-category {
   width: 80%;
+  font-size: calc(8px + .3vw + .3vh);
 }
 
 .officers-category .advanced {
