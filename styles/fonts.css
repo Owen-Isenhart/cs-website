@@ -1,0 +1,32 @@
+@font-face {
+    font-family: "Ykar";
+    src: url(../fonts/Ykar.otf);
+  }
+  @font-face {
+    font-family: "Exo";
+    src: url(../fonts/Exo.ttf);
+  }
+  @font-face {
+    font-family: "ExoItalic";
+    src: url(../fonts/ExoItalic.ttf);
+  }
+  @font-face {
+    font-family: "ExoBold";
+    src: url(../fonts/Exo-Bold.ttf);
+  }
+  @font-face {
+    font-family: "ExoItalicBold";
+    src: url(../fonts/Exo-BoldItalic.ttf);
+  }
+  @font-face {
+    font-family: "BigJohnReg";
+    src: url(../fonts/BigJohnPRO-Regular.otf);
+  }
+  @font-face {
+    font-family: "BigJohnLight";
+    src: url(../fonts/BigJohnPRO-Light.otf);
+  }
+  @font-face {
+    font-family: "BigJohnBold";
+    src: url(../fonts/BigJohnPRO-Bold.otf);
+  }

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Frisco High School Computer Science Club"
+    />
+    <meta name="keywords" content="Frisco High School, Computer Science" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <title>My Website</title>
+    <link rel="stylesheet" href="styles/fonts.css" />
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      emailjs.init("8PmaYqpV1d5gedmOr"); // Replace "your_user_id" with your actual User ID from EmailJS
+    </script>
+
+    <link rel="stylesheet" href="styles/faq.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="officers.html">Officers</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="https://www.remind.com/join/fhscompute">Remind</a></li>
+          <li>
+            <a href="https://www.instagram.com/fhs_compsci/">Instagram</a>
+          </li>
+          <li><a href="faq.html" class="index">FAQ</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="page-container">
+      <div class="content">
+        <div class="content-text">
+          <h1 class="title">
+            Frequently<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Asked<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Questions!
+          </h1>
+          <p class="description">
+            Have any questions? Check below to see if it's already answered!
+            Otherwise, feel free to fill out the form and we will get back to
+            you as soon as possible!
+          </p>
+        </div>
+        <div class="content-img">
+          <img src="images/faqicon.jpg" alt="Code img" />
+          <div class="centered-buttons" id="portrait-buttons">
+            <button class="button">
+              <a href="https://www.remind.com/join/fhscompute">Remind</a>
+            </button>
+            <button class="button">
+              <a href="https://www.instagram.com/fhs_compsci/">Instagram</a>
+            </button>
+            <button class="button">
+              <a href="faq.html">FAQ</a>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dropdown-container">
+        <div class="dropdown">
+          <h3>Where and when does the club meet? <span>▼</span></h3>
+          <div class="dropdown-content">
+            <p>
+              The club meets on Wednesday after school in D103, typically for 1
+              hour.
+            </p>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <h3>Do I need my own computer? <span>▼</span></h3>
+          <div class="dropdown-content">
+            <p>
+              You do not need to bring your own computer although it is
+              recommended as pc availability can become an issue. Additionally,
+              if you are placed in the advanced group, it is highly encouraged
+              to bring your own computer as it may be needed for various
+              software.
+            </p>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <h3>Do I already need to know how to code? <span>▼</span></h3>
+          <div class="dropdown-content">
+            <p>
+              No! The club welcomes people of all skill levels. Both the person
+              with no experience and years of experience will be challenged,
+              encouraged, and learn in this club.
+            </p>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <h3>How do I become an officer? <span>▼</span></h3>
+          <div class="dropdown-content">
+            <p>
+              Officer applications happen at the end of every school year and
+              the new officers are announced shortly after.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-container">
+        <h3>Question Form</h3>
+        <form id="contact-form" method="post">
+          <label>Name</label>
+          <input type="text" name="user_name" />
+          <label>Email</label>
+          <input type="email" name="user_email" />
+          <label>Message</label>
+          <textarea name="message"></textarea>
+          <input type="submit" value="Send" />
+        </form>
+        <script
+          id="ratufa_loader"
+          src="https://www.ratufa.io/c/ld.js?f=krsx90pb&n=n1.ratufa.io"
+          style="justify-self: center; align-self: center"
+        ></script>
+      </div>
+    </div>
+
+    <script>
+      function removeNbspFromTitle() {
+        const title = document.querySelector(".title");
+        title.innerHTML = "Questions &<br>&nbsp;&nbsp;&puncsp;Answers!";
+      }
+      function addNbspToTitle() {
+        const title = document.querySelector(".title");
+        title.innerHTML =
+          "Questions &<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Answers!";
+      }
+
+      function checkPortraitMaxWidth() {
+        const maxWidth = 830;
+        const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+        const windowWidth = window.innerWidth;
+
+        if (isPortrait && windowWidth <= maxWidth) {
+          // Remove "&nbsp;" from the title
+          removeNbspFromTitle();
+
+          // Hide the last three items from the nav bar
+          const navItems = document.querySelectorAll("nav ul li");
+          for (let i = navItems.length - 1; i >= navItems.length - 3; i--) {
+            navItems[i].style.display = "none";
+          }
+        } else {
+          // Show all items in the nav bar
+          const navItems = document.querySelectorAll("nav ul li");
+          for (let i = 0; i < navItems.length; i++) {
+            navItems[i].style.display = "inline";
+          }
+          addNbspToTitle();
+        }
+      }
+
+      // Check on page load
+      checkPortraitMaxWidth();
+
+      // Check on window resize
+      window.addEventListener("resize", checkPortraitMaxWidth);
+
+      // JavaScript for toggling the dropdown content
+      window.addEventListener("DOMContentLoaded", function () {
+        const dropdowns = document.querySelectorAll(".dropdown");
+
+        dropdowns.forEach(function (dropdown) {
+          const content = dropdown.querySelector(".dropdown-content");
+          const originalMargin = getComputedStyle(dropdown).marginBottom;
+
+          dropdown.addEventListener("click", function (event) {
+            // Check if the cursor is 'pointer' before toggling the dropdown
+            if (getComputedStyle(event.target).cursor === "pointer") {
+              // Close any open dropdowns except the clicked one
+              dropdowns.forEach(function (otherDropdown) {
+                const otherContent =
+                  otherDropdown.querySelector(".dropdown-content");
+                if (
+                  otherDropdown !== dropdown &&
+                  otherContent.style.display === "block"
+                ) {
+                  otherContent.style.display = "none";
+                  otherDropdown.style.marginBottom = originalMargin;
+                  otherDropdown.classList.remove("open");
+                }
+              });
+
+              // Toggle the display of the clicked dropdown content
+              content.style.display =
+                content.style.display === "block" ? "none" : "block";
+
+              // Adjust the position and height of the clicked dropdown
+              if (content.style.display === "block") {
+                const dropdownHeight = dropdown.offsetHeight;
+                content.style.height = "auto";
+                const contentHeight = content.offsetHeight;
+                const totalHeight = dropdownHeight + contentHeight;
+                dropdown.style.marginBottom = `calc(${totalHeight}px - ${dropdownHeight}px)`;
+                dropdown.classList.add("open");
+              } else {
+                dropdown.style.marginBottom = originalMargin;
+                dropdown.classList.remove("open");
+              }
+
+              // Prevent event propagation to the dropdown content
+              event.stopPropagation();
+            }
+          });
+
+          // Close the dropdown when clicking outside of it
+          document.addEventListener("click", function (event) {
+            const openDropdown = document.querySelector(".dropdown.open");
+            if (openDropdown) {
+              const openContent =
+                openDropdown.querySelector(".dropdown-content");
+              if (openContent && !openContent.contains(event.target)) {
+                openContent.style.display = "none";
+                openDropdown.style.marginBottom = originalMargin;
+                openDropdown.classList.remove("open");
+              }
+            }
+          });
+        });
+
+        // Update dropdown positions when the window is resized
+        window.addEventListener("resize", function () {
+          dropdowns.forEach(function (dropdown) {
+            if (dropdown.classList.contains("open")) {
+              const content = dropdown.querySelector(".dropdown-content");
+              const originalMargin = getComputedStyle(dropdown).marginBottom;
+              const dropdownHeight = dropdown.offsetHeight;
+              content.style.height = "auto";
+              const contentHeight = content.offsetHeight;
+              const totalHeight = dropdownHeight + contentHeight;
+              dropdown.style.marginBottom = `calc(${totalHeight}px - ${dropdownHeight}px)`;
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

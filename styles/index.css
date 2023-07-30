@@ -1,0 +1,272 @@
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Global styles */
+body {
+  overflow-x: hidden;
+  font-family: "Exo";
+  background-image: url("../images/background1.jpg");
+  background-size: cover;
+  background-position: center;
+  /* height: 100vh; */
+  overflow-y: hidden;
+  background-attachment: fixed;
+  /* Added this line */
+  color: rgb(233, 194, 20);
+}
+
+header {
+  background: repeating-linear-gradient(
+    -45deg,
+    #c98900,
+    #00027a,
+    #c98900,
+    #00027a
+  );
+  background-repeat: repeat-x;
+  background-size: 600% 100%;
+  animation: gradient 100s linear infinite;
+  padding: 10px;
+  height: 4%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(10px + 1vh);
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  gap: 5vw;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav .index {
+  font-family: "ExoBold";
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: calc(150px - 10vw);
+}
+
+.content-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+}
+
+.content-text h1 {
+  font-size: calc(12px + 5vw);
+
+  line-height: 1.2;
+  text-align: left;
+  margin-bottom: 1vw;
+}
+
+.content-text p {
+  font-size: calc(6px + 1vw);
+  font-weight: 500;
+  width: 33vw;
+  margin: 0;
+  text-align: center;
+}
+
+.content-img {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+}
+
+.content-img img {
+  width: 80%;
+  height: 80%;
+  min-width: 340px;
+  box-sizing: border-box;
+  justify-self: center;
+  filter: drop-shadow(0px 0px 15px #ffd00086);
+}
+
+.question-form {
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.question-form form {
+  width: 60%;
+}
+
+.question-form input[type="text"],
+.question-form input[type="email"],
+.question-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.question-form input[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.centered-buttons {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3vw;
+  width: 100%;
+}
+
+.button {
+  width: 80%;
+  height: 5vh;
+  background-color: #f0b000;
+  border-radius: 20px;
+  box-shadow: 0 0 2vw #000000;
+  transition: width 0.3s ease;
+  margin-top: 3.5vh;
+}
+.button a {
+  text-decoration: none;
+  color: #000280;
+  font-weight: 700;
+  font-size: calc(1vw + 1vh);
+}
+.button:hover {
+  cursor: pointer;
+  width: 100%;
+  background-color: #3135ff;
+  border-radius: 20px;
+}
+.button:hover a {
+  text-decoration: none;
+  color: #e0a500;
+  font-weight: 700;
+  font-size: calc(1vw + 1vh);
+}
+#portrait-buttons {
+  display: none;
+}
+
+@media (max-width: 830px) and (orientation: portrait) {
+  header {
+    font-size: calc(8px + 1vh);
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 6vw;
+  }
+  nav ul li:nth-last-child(-n + 3) {
+    display: none;
+  }
+
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 10px;
+    gap: 25px;
+  }
+
+  .content-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+  }
+
+  .content-text h1 {
+    font-size: calc(2vw + 5vh);
+    line-height: 1.2;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+
+  .content-text p {
+    font-size: calc(2vw + 1vh);
+    font-weight: 500;
+    width: 60vw;
+    margin: 0;
+    text-align: center;
+  }
+
+  .content-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+  }
+
+  .content-img img {
+    width: 40vw;
+    height: 35vw;
+    min-width: 0;
+    box-sizing: border-box;
+    justify-self: center;
+  }
+
+  #portrait-buttons {
+    display: flex;
+  }
+  .title {
+    text-align: center; /* Center-align the text */
+  }
+}
