@@ -201,6 +201,9 @@ nav .index {
 }
 
 @media (max-width: 830px) and (orientation: portrait) {
+  body{
+    overflow-y: auto;
+  }
   header {
     font-size: calc(8px + 1vh);
   }
